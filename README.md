@@ -1,2 +1,2 @@
 # CSBattle_Client
-Client Repository for CS_Battle Platform.
+Client Repository for CS_Battle Platform
