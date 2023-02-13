@@ -1,19 +1,21 @@
 import { Outlet } from "react-router-dom";
 import Header from './Header';
 import Footer from './Footer';
-import LobbyPage from "pages/LobbyPage";
 
 const LobbyLayout = () => {
   return (
     <>
-      <div className="relative flex min-h-screen flex-row justify-center overflow-hidden bg-OnPrimaryContainer py-10">
-        <div className="relative bg-white w-9/12 h-full aspect-video px-7 py-7 flex-col justify-center shadow-xl ring-8 ring-Secondary rounded-lg">
+      <div className="relative flex min-h-screen flex-col justify-center xl:justify-start overflow-hidden bg-OnPrimaryContainer px-20 py-10">
+        <div className="relative bg-white flex-col aspect-[16/7] max-xl  px-1 py-1 justify-center shadow-xl ring-8 ring-Secondary rounded-lg">
           <Header />
-          <LobbyPage />
+          <Outlet />
+        </div>
+
+        <div className="relative flex-none px-7 py-7 justify-center">
           <Footer />
         </div>
+
       </div>
-      <Outlet />
     </>
   );
 };
