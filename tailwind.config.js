@@ -49,6 +49,10 @@ module.exports = {
         '8xl': ['6rem', { lineHeight: '1' }],
         '9xl': ['8rem', { lineHeight: '1' }],
       },
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '16/9': '16 / 9'
+      },
     },
   },
   plugins: [],
