@@ -19,8 +19,8 @@ const MenuItems = [
 
 const Header = () => {
   return (
-    <header className="relative w-full h-1/6 md:h-1/5 inset-x-0 top-0 z-40 left-0 bg-white text-gray-700 body-font border-b border-gray-200">
-      <nav className='flex flex-row'>
+    <header className="relative w-full pt-8 pb-3 mb-3 inset-x-0 top-0 z-40 left-0 bg-white text-gray-700 body-font border-b border-gray-200">
+      <nav className='flex flex-row max-h-full'>
         <h1 className="flex-none">CS Battle</h1>
         <div className="flex-none">
             <i className='temp-info'></i>
