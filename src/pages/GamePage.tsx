@@ -15,21 +15,27 @@ const GamePage = () => {
   //   onReset;
   //   alert("submit answer");
   // };
+  const test =
+    "문제의 내용이 들어갈 장소 입니다. 다양한 유형의 문제가 들어갈 예정입니다. 구현 많이 못했어요 죄송해요 빨리할게요 엉엉.";
 
   return (
     <>
-      <div className="flex flex-col min-h-screen min-w-screen mx-2 overflow-x-hidden bg-slate-300">
-        {/*문제배치*/}
-        <div className="flex basis-80 flex-row p-4 m-2 gap-2 gap-y-4 bg-slate-500">
+      {/*문제배치*/}
+      <div className="flex-auto flex-col min-w-screen m-2 mx-2 overflow-x-hidden bg-slate-300">
+        <div className="flex h-72 flex-col p-4 m-2 gap-2 gap-y-4 text-center bg-slate-500">
           <p className="text-gray-800 hover:text-red-600">문제 배치 장소</p>
-        </div>
-        {/*정답입력칸*/}
-        <div className="flex flex-col basis-72 p-4 m-2 gap-2 gap-y-4 bg-slate-500">
-          <p className="text-gray-800 hover:text-red-600">정답입력칸</p>
-          <input onChange={onChange} value={input}></input>
-          {/* <button onClick={onReset}>submit</button> */}
+          <p className="text-gray-800 ">{test}</p>
         </div>
       </div>
+      {/*정답입력칸*/}
+      <div className="flex-auto flex-col min-w-screen m-2 mx-2 overflow-x-hidden bg-slate-300">
+        <div className="relative flex flex-col basis-48 rounded-3xl p-4 m-2 gap-2 items-center justify-center bg-slate-500">
+          <p className="text-gray-800 hover:text-red-600">정답입력칸</p>
+          {/*임시 정답 입력칸*/}
+          <input className="w-60 h-10" onChange={onChange} value={input}></input>
+        </div>
+      </div>
+      {/*버튼..?*/}
       <div className="flex flex-row place-content-center">
         <Button className="m-5 p-2 w-44" onClick={() => alert("pass this question")}>
           pass button
