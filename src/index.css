@@ -22,3 +22,10 @@
     @apply flex min-h-screen w-full flex-col justify-center;
   }
 }
+.button {
+  text-align: center;
+  font-size: 10px;
+  width: fit-content;
+  height: fit-content;
+  color: black;
+}
