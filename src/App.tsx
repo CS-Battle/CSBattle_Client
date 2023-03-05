@@ -15,8 +15,8 @@ function App() {
   useEffect(() => {
     const userId = load("userId")
 
-    if (userId === null) {
-      redirect("/login")
+    if (userId === null && window.location.pathname !== "/login") {
+      window.location.href = "/login"
     }
   }, [])
 
