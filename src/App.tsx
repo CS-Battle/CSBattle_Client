@@ -14,9 +14,14 @@ function App() {
         <Route path="/lobby" element={<LobbyLayout />}>
           <Route path="" element={<LobbyPage />} />
         </Route>
-        <Route path="/game" element={<GameLayout />}>
-          <Route path="" element={<GamePage />} />
-        </Route>
+        <Route
+          path="/game"
+          element={
+            <GameLayout>
+              <GamePage />
+            </GameLayout>
+          }
+        />
       </Routes>
     </Router>
   );
