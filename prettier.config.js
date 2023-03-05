@@ -2,7 +2,7 @@ module.exports = {
     printWidth: 120,
     tabWidth: 2,
     useTabs: false,
-    semi: true,
+    semi: false,
     trailingComma: "es5",
     htmlWhitespaceSensitivity: "css"
 }

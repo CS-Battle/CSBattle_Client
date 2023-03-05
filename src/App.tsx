@@ -1,11 +1,11 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from "react"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
-import GameLayout from "./layout/GameLayout";
-import LobbyLayout from "./layout/LobbyLayout";
+import GameLayout from "./layout/GameLayout"
+import LobbyLayout from "./layout/LobbyLayout"
 
-import GamePage from "./pages/GamePage";
-import LobbyPage from "./pages/LobbyPage";
+import GamePage from "./pages/GamePage"
+import LobbyPage from "./pages/LobbyPage"
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         </Route>
       </Routes>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

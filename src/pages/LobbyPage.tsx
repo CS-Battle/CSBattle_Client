@@ -1,9 +1,7 @@
-import React from "react";
+import React from "react"
 
 const LobbyPage = () => {
-  return (
-    <></>
-  );
-};
+  return <></>
+}
 
-export default LobbyPage;
+export default LobbyPage

@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom"
 
 const LobbyLayout = () => {
   return (
     <>
       <Outlet />
     </>
-  );
-};
+  )
+}
 
-export default LobbyLayout;
+export default LobbyLayout
