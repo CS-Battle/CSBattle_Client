@@ -1,34 +1,34 @@
-import Button from "components/atoms/Button/Button";
-import { useLocalstorage } from "hooks/useLocalstorage";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getRandomNumber } from "utils/randomNumber";
-import { UserCircleIcon } from "@heroicons/react/24/solid";
-import TextInput from "components/atoms/TextInput/TextInput";
+import Button from "components/atoms/Button/Button"
+import { useLocalstorage } from "hooks/useLocalstorage"
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { getRandomNumber } from "utils/randomNumber"
+import { UserCircleIcon } from "@heroicons/react/24/solid"
+import TextInput from "components/atoms/TextInput/TextInput"
 
 const LoginPage = () => {
-  const { save, load } = useLocalstorage();
-  const navigate = useNavigate();
-  const [nickname, setNickname] = useState<string>("");
-  const defaultName = `anonymous${getRandomNumber(0, 65535)}`;
+  const { save, load } = useLocalstorage()
+  const navigate = useNavigate()
+  const [nickname, setNickname] = useState<string>("")
+  const defaultName = `anonymous${getRandomNumber(0, 65535)}`
 
   useEffect(() => {
-    const userId = load("userId");
+    const userId = load("userId")
 
     if (userId !== null) {
-      setNickname(userId);
+      setNickname(userId)
     }
-  }, []);
+  }, [])
 
   const onNicknameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setNickname(event.target.value);
-  };
+    setNickname(event.target.value)
+  }
 
   const onStartClick = () => {
-    const _nickname = nickname === "" ? defaultName : nickname;
-    save("userId", _nickname);
-    navigate("/lobby");
-  };
+    const _nickname = nickname === "" ? defaultName : nickname
+    save("userId", _nickname)
+    navigate("/lobby")
+  }
 
   return (
     <div className="h-full bg-OnPrimaryContainer flex flex-col justify-center">
@@ -46,7 +46,7 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoginPage;
+export default LoginPage
