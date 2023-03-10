@@ -1,16 +1,16 @@
-import { classNames } from "utils/classNames";
+import { classNames } from "utils/classNames"
 
 type TextInputProps = {
-  placeholder?: string;
-  disabled?: boolean;
-  styles?: React.CSSProperties;
-  className?: string;
-  value: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-};
+  placeholder?: string
+  disabled?: boolean
+  styles?: React.CSSProperties
+  className?: string
+  value: string
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
 
 const TextInput = (props: TextInputProps) => {
-  const { placeholder, styles, className = "", disabled = false, value, onChange } = props;
+  const { placeholder, styles, className = "", disabled = false, value, onChange } = props
   return (
     <input
       type="text"
@@ -24,7 +24,7 @@ const TextInput = (props: TextInputProps) => {
       value={value}
       onChange={onChange}
     />
-  );
-};
+  )
+}
 
-export default TextInput;
+export default TextInput

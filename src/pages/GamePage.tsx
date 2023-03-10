@@ -12,9 +12,9 @@ const GamePage = () => {
   }
 
   // const mixFunction = () => {
-  //   onReset;
-  //   alert("submit answer");
-  // };
+  //   onReset
+  //   alert("submit answer")
+  // }
 
   return (
     <>

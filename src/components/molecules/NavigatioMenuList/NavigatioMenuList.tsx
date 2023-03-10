@@ -1,16 +1,16 @@
-import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 
 interface NavigatioMenuListProps {
-  menuItems: Menu[];
+  menuItems: Menu[]
 }
 
 interface Menu {
-  title: string;
-  url: string;
+  title: string
+  url: string
 }
 
 const NavigatioMenuList = (props: NavigatioMenuListProps) => {
-  const { menuItems } = props;
+  const { menuItems } = props
 
   return (
     <NavigationMenu.Root className="relative flex-1 justify-center z-1">
@@ -27,11 +27,11 @@ const NavigatioMenuList = (props: NavigatioMenuListProps) => {
             <NavigationMenu.Item key={index} className="relative mx-4">
               <NavigationMenu.Link>{item.title}</NavigationMenu.Link>
             </NavigationMenu.Item>
-          );
+          )
         })}
       </NavigationMenu.List>
     </NavigationMenu.Root>
-  );
-};
+  )
+}
 
-export default NavigatioMenuList;
+export default NavigatioMenuList
