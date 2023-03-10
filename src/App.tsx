@@ -27,14 +27,9 @@ function App() {
         <Route path="/lobby" element={<LobbyLayout />}>
           <Route path="gameSelect" element={<LobbyPage />} />
         </Route>
-        <Route
-          path="/game"
-          element={
-            <GameLayout>
-              <GamePage />
-            </GameLayout>
-          }
-        />
+        <Route path="/game" element={<GameLayout />}>
+          <Route path="" element={<GamePage />} />
+        </Route>
       </Routes>
     </Router>
   )
