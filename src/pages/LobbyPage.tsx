@@ -1,5 +1,6 @@
 import Button from "../components/atoms/Button/Button"
 import * as Label from "@radix-ui/react-label"
+import { Dialog, DialogTrigger, DialogContent } from "../components/atoms/Dialog/Dialog"
 
 const LobbyPage = () => {
   return (
