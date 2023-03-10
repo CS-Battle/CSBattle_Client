@@ -1,17 +1,18 @@
 import React from "react"
 import Button from "../components/atoms/Button/Button"
 import * as Label from "@radix-ui/react-label"
+import {Dialog, DialogTrigger, DialogContent } from "../components/atoms/Dialog/Dialog"
 
 const LobbyPage = () => {
   return (
     <>
-      <div className="flex flex-col h-full justify-center gap-12">
+      <div className="flex flex-col justify-center h-full gap-12">
         <div className="flex-initial">
-          <Label.Root className="text-lg px-4" htmlFor="firstName">
+          <Label.Root className="px-4 text-lg" htmlFor="firstName">
             원하는 게임을 선택하세요!
           </Label.Root>
         </div>
-        <div className="flex-initial justify-center">
+        <div className="justify-center flex-initial">
           <div className="grid grid-cols-3 gap-4">
             <Button className="">먼저 끝까지 도달하기</Button>
             <Button className="">N전M승</Button>
@@ -22,8 +23,13 @@ const LobbyPage = () => {
           </div>
         </div>
 
-        <div className="flex-initial self-end">
-          <Button className="relative mx-12">게임 시작</Button>
+        <div className="self-end flex-initial">
+          <Dialog>
+            <DialogTrigger>
+              <Button className="relative mx-12">게임 시작</Button>
+            </DialogTrigger>
+            <DialogContent></DialogContent>
+          </Dialog>
         </div>
       </div>
     </>
