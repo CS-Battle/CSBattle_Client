@@ -5,13 +5,15 @@ import { Cross1Icon } from '@radix-ui/react-icons';
 interface DialogContentProps {
     children?: JSX.Element | string;
 }
+
 export const DialogContent = (props: DialogContentProps) => {
     const {children} = props;
     return (
         <DialogPrimitive.Portal>
             <DialogPrimitive.Overlay />
-            <DialogPrimitive.Content {...props} ref={forwardedRef}>
+            <DialogPrimitive.Content>
                 {children}
+                {/* 열심히 고치는중.. */}
                 <DialogPrimitive.Close aria-label="Close">
                 <Cross1Icon />
                 </DialogPrimitive.Close>
