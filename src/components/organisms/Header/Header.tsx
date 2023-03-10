@@ -1,4 +1,4 @@
-import NavigatioMenuList from "components/molecules/NavigatioMenuList/NavigatioMenuList";
+import NavigationMenuList from "components/molecules/NavigationMenuList/NavigationMenuList";
 import Button from "../../atoms/Button/Button";
 import { classNames } from "../../../utils/classNames";
 
@@ -24,7 +24,7 @@ const Header = (props: HeaderProps) => {
         <div className="flex-none">
           <i className="temp-info"></i>
         </div>
-        <NavigatioMenuList menuItems={navMenuItems} className="relative justify-center flex-1 z-1"/>
+        <NavigationMenuList menuItems={navMenuItems} className="relative justify-center flex-1 z-1" />
         <Button>Sign Up</Button>
       </nav>
       {/* css 중에 transform - scale 찾아보자. (배율 주기) */}
