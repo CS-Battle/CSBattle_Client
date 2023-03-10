@@ -15,7 +15,6 @@
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
-    "@radix-ui/react-label": "^2.0.0",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
