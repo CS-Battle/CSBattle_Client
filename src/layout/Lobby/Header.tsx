@@ -1,5 +1,5 @@
-import NavigatioMenuList from "components/molecules/NavigatioMenuList/NavigatioMenuList";
-import Button from "../../components/atoms/Button/Button";
+import NavigatioMenuList from "components/molecules/NavigatioMenuList/NavigatioMenuList"
+import Button from "../../components/atoms/Button/Button"
 
 const menuItems = [
   {
@@ -14,7 +14,7 @@ const menuItems = [
     title: "커뮤니티",
     url: "#",
   },
-];
+]
 
 const Header = () => {
   return (
@@ -29,7 +29,7 @@ const Header = () => {
       </nav>
       {/* css 중에 transform - scale 찾아보자. (배율 주기) */}
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

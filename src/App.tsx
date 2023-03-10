@@ -1,24 +1,24 @@
-import { redirect, BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { redirect, BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
-import GameLayout from "layout/GameLayout";
-import LobbyLayout from "layout/Lobby/LobbyLayout";
+import GameLayout from "layout/GameLayout"
+import LobbyLayout from "layout/Lobby/LobbyLayout"
 
-import GamePage from "pages/GamePage";
-import LoginPage from "pages/LoginPage";
-import LobbyPage from "pages/LobbyPage";
-import { useEffect } from "react";
-import { useLocalstorage } from "hooks/useLocalstorage";
+import GamePage from "pages/GamePage"
+import LoginPage from "pages/LoginPage"
+import LobbyPage from "pages/LobbyPage"
+import { useEffect } from "react"
+import { useLocalstorage } from "hooks/useLocalstorage"
 
 function App() {
-  const { load } = useLocalstorage();
+  const { load } = useLocalstorage()
 
   useEffect(() => {
-    const userId = load("userId");
+    const userId = load("userId")
 
-    if (userId === null) {
-      redirect("/login");
+    if (userId === null && window.location.pathname !== "/login") {
+      window.location.href = "/login"
     }
-  }, []);
+  }, [])
 
   return (
     <Router>
@@ -27,12 +27,17 @@ function App() {
         <Route path="/lobby" element={<LobbyLayout />}>
           <Route path="gameSelect" element={<LobbyPage />} />
         </Route>
-        <Route path="/game" element={<GameLayout />}>
-          <Route path="" element={<GamePage />} />
-        </Route>
+        <Route
+          path="/game"
+          element={
+            <GameLayout>
+              <GamePage />
+            </GameLayout>
+          }
+        />
       </Routes>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
