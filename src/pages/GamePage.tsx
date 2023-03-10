@@ -2,14 +2,10 @@ import Button from "components/atoms/Button/Button"
 import React, { useState } from "react"
 
 const GamePage = () => {
-  //임시 input
-  const [input, setInput] = useState("")
-  const onChange = (e: { target: { value: React.SetStateAction<string> } }) => {
-    setInput(e.target.value)
-  }
-  const onReset = () => {
-    setInput("")
-  }
+  const [answer, setAnswer] = useState("")
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => setAnswer(event.target.value)
+  const onReset = () => setAnswer("")
 
   // const mixFunction = () => {
   //   onReset
@@ -26,7 +22,7 @@ const GamePage = () => {
         {/*정답입력칸*/}
         <div className="flex flex-col basis-72 p-4 m-2 gap-2 gap-y-4 bg-slate-500">
           <p className="text-gray-800 hover:text-red-600">정답입력칸</p>
-          <input onChange={onChange} value={input}></input>
+          <input onChange={onChange} value={answer}></input>
           {/* <button onClick={onReset}>submit</button> */}
         </div>
       </div>

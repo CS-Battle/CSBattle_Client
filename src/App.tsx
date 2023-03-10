@@ -1,7 +1,7 @@
-import { redirect, BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 import GameLayout from "layout/GameLayout"
-import LobbyLayout from "layout/Lobby/LobbyLayout"
+import LobbyLayout from "layout/LobbyLayout"
 
 import GamePage from "pages/GamePage"
 import LoginPage from "pages/LoginPage"
@@ -27,14 +27,9 @@ function App() {
         <Route path="/lobby" element={<LobbyLayout />}>
           <Route path="gameSelect" element={<LobbyPage />} />
         </Route>
-        <Route
-          path="/game"
-          element={
-            <GameLayout>
-              <GamePage />
-            </GameLayout>
-          }
-        />
+        <Route path="/game" element={<GameLayout />}>
+          <Route path="" element={<GamePage />} />
+        </Route>
       </Routes>
     </Router>
   )

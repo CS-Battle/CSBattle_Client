@@ -51,8 +51,12 @@ module.exports = {
         "2xs": ["0.5rem", { lineHeight: "1" }],
       },
       aspectRatio: {
-        '4/3': '4 / 3',
-        '16/9': '16 / 9'
+        "4/3": "4 / 3",
+        "16/9": "16 / 9",
+      },
+      aspectRatio: {
+        "4/3": "4 / 3",
+        "16/9": "16 / 9",
       },
       aspectRatio: {
         '4/3': '4 / 3',
@@ -61,4 +65,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}
