@@ -1,4 +1,3 @@
-import React from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { Cross1Icon } from "@radix-ui/react-icons"
 
@@ -25,7 +24,7 @@ export const DialogContent = (props: DialogContentProps) => {
 //   ({ children, ...props }, forwardedRef) => (
 
 //   )
-// );
+// )
 
 export const Dialog = DialogPrimitive.Root
 export const DialogTrigger = DialogPrimitive.Trigger

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 import GameLayout from "layout/GameLayout"
-import LobbyLayout from "layout/Lobby/LobbyLayout"
+import LobbyLayout from "layout/LobbyLayout"
 
 import GamePage from "pages/GamePage"
 import LoginPage from "pages/LoginPage"

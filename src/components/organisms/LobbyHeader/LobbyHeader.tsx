@@ -1,22 +1,9 @@
 import NavigatioMenuList from "components/molecules/NavigationMenuList/NavigationMenuList"
-import Button from "../../components/atoms/Button/Button"
+import Button from "components/atoms/Button/Button"
 
-const menuItems = [
-  {
-    title: "기록장",
-    url: "#",
-  },
-  {
-    title: "랭킹",
-    url: "#",
-  },
-  {
-    title: "커뮤니티",
-    url: "#",
-  },
-]
+import { menuItems } from "./const"
 
-const Header = () => {
+const LobbyHeader = () => {
   return (
     <header className="relative w-full pt-8 pb-3 mb-3 inset-x-0 top-0 z-40 left-0 bg-white text-gray-700 body-font border-b border-gray-200">
       <nav className="flex flex-row max-h-full">
@@ -32,4 +19,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default LobbyHeader
