@@ -1,4 +1,4 @@
-import NavigatioMenuList from "components/molecules/NavigatioMenuList/NavigatioMenuList"
+import NavigatioMenuList from "components/molecules/NavigationMenuList/NavigationMenuList"
 import Button from "../../components/atoms/Button/Button"
 
 const menuItems = [
