@@ -1,7 +1,8 @@
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 
-interface NavigatioMenuListProps {
+interface NavigationMenuListProps {
   menuItems: Menu[]
+  className?: string 
 }
 
 interface Menu {
@@ -9,19 +10,12 @@ interface Menu {
   url: string
 }
 
-const NavigatioMenuList = (props: NavigatioMenuListProps) => {
+const NavigatioMenuList = (props: NavigationMenuListProps) => {
   const { menuItems } = props
 
   return (
-    <NavigationMenu.Root className="relative flex-1 justify-center z-1">
-      <NavigationMenu.List className="relative flex justify-end bg-white pr-4 pt-1">
-        {/* <NavigationMenu.Item>
-        <NavigationMenu.Trigger>기록장</NavigationMenu.Trigger>
-      </NavigationMenu.Item>
-      <NavigationMenu.Item>
-        <NavigationMenu.Trigger>커뮤니티</NavigationMenu.Trigger>
-      </NavigationMenu.Item> */}
-
+    <NavigationMenu.Root className="relative justify-center flex-1 z-1">
+      <NavigationMenu.List className="relative flex justify-end pt-1 pr-4 bg-white">
         {menuItems.map((item, index) => {
           return (
             <NavigationMenu.Item key={index} className="relative mx-4">
