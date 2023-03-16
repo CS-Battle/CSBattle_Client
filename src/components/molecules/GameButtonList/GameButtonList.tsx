@@ -18,6 +18,7 @@ const GameButtonList = (props: GameButtonListProps) => {
         {gameList.map((game, i) => (
           <Button
             key={i}
+            className="focus:bg-OnPrimaryContainer text-OnPrimary"
             onClick={() => onClickButton(game.label)}
           >
             {game.label}
