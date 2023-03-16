@@ -8,11 +8,14 @@ interface GameselectAlertDialogProps {
   children: JSX.Element
   cancel: JSX.Element | string
   action: JSX.Element | string
+  gametype: string
 }
 
 const GameselectAlertDialog = (props: GameselectAlertDialogProps) => {
-  const {title, description, children, cancel, action} = props
-
+  const {title, description, children, cancel, action, gametype} = props
+  const onClickAction = () => {
+    
+  }
   return (
     <AlertDialog.Root>
       <AlertDialog.Trigger>
@@ -20,11 +23,12 @@ const GameselectAlertDialog = (props: GameselectAlertDialogProps) => {
       </AlertDialog.Trigger>
       <AlertDialogContent>
         <div>
-          <AlertDialog.Title className="m-0 text-[17px] font-medium">
+          <AlertDialog.Title className="m-0 text-[17px] font-bold">
             {title}
           </AlertDialog.Title>
           <AlertDialog.Description className="mt-[10px] mb-5 text-[15px] leading-normal">
-            {description}
+            <span className="font-bold text-Primary">{gametype}</span>
+            <span>{description}</span>
           </AlertDialog.Description>
 
           <div className="mt-[25px] flex justify-end">
@@ -34,25 +38,6 @@ const GameselectAlertDialog = (props: GameselectAlertDialogProps) => {
       </div>
       </AlertDialogContent>
     </AlertDialog.Root>
-    // <DialogContent>
-    //   <div>
-    //     <Dialog.Title className="m-0 text-[17px] font-medium">
-    //       {title}
-    //     </Dialog.Title>
-    //     <Dialog.Description className="mt-[10px] mb-5 text-[15px] leading-normal">
-    //       {description}
-    //     </Dialog.Description>
-
-    //     <div className="mt-[25px] flex justify-end">
-    //       <Dialog.Close asChild>
-    //         <Button className="mx-4">예</Button>
-    //       </Dialog.Close>
-    //       <Dialog.Close asChild>
-    //         <Button className="mx-4">아니오</Button>
-    //       </Dialog.Close>
-    //     </div>
-    //   </div>
-    // </DialogContent>
   )
 }
 

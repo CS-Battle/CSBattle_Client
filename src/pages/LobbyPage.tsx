@@ -12,12 +12,13 @@ const LobbyPage = () => {
   return (
     <div className="flex flex-col justify-center h-full gap-12">
       <Label>원하는 게임을 선택하세요!</Label>
-      <GameButtonList />
+      <GameButtonList gametype = {gametype} setGametype = {(v: string) => {setGametype(v)}}/>
 
       <div className="self-end flex-initial">
         <GameselectAlertDialog
           title = "게임 유형 선택"
-          description = "해당 유형으로 게임을 시작하시겠습니까?"
+          gametype = {gametype}
+          description = " 유형으로 게임을 시작하시겠습니까?"
           cancel = "취소"
           action = "매칭 시작하기"
         >
