@@ -5,7 +5,7 @@ import { menuItems } from "./const"
 
 const LobbyHeader = () => {
   return (
-    <header className="relative w-full pt-8 pb-3 mb-3 inset-x-0 top-0 z-40 left-0 bg-white text-gray-700 body-font border-b border-gray-200">
+    <header className="relative inset-x-0 top-0 left-0 w-full pt-8 pb-3 mb-3 text-gray-700 bg-white border-b border-gray-200">
       <nav className="flex flex-row max-h-full">
         <h1 className="flex-none">CS Battle</h1>
         <div className="flex-none">
