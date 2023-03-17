@@ -13,7 +13,7 @@ export const useTimer = (time: number) => {
       setSeconds(30)
     }
     return () => clearInterval(interval)
-  }, [])
+  }, [seconds])
 
   return { seconds }
 }

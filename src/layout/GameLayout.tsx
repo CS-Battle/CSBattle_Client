@@ -17,7 +17,7 @@ const GameLayout = (props: GameLayoutProps) => {
           <h1>status bar</h1>
           <Avatar name={"user2"}></Avatar>
         </div>
-        <div>{<Outlet />}</div>
+        <div>{children || <Outlet />}</div>
         {/* <div className="flex flex-row place-content-center">
             <Button className="m-5 p-2 w-44" onClick={() => alert("pass this question")}>
               pass button
