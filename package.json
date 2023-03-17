@@ -13,6 +13,12 @@
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-alert-dialog": "^1.0.3",
+    "@radix-ui/react-dialog": "^1.0.3",
+    "@radix-ui/react-icons": "^1.2.0",
+    "@radix-ui/react-label": "^2.0.1",
+    "@radix-ui/react-navigation-menu": "^1.1.2",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",

@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+
   ol,
   ul,
   li {
@@ -22,11 +29,3 @@
   height: fit-content;
   color: black;
 }
-/*
-스타일링 재설정 필요
-.status_out{
-
-}
-.status_in{
-
-} */
