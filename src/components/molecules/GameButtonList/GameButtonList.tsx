@@ -6,7 +6,7 @@ interface GameButtonListProps {
   setGametype: (v: string) => void
 }
 const GameButtonList = (props: GameButtonListProps) => {
-  const {setGametype} = props
+  const { setGametype } = props
 
   const onClickButton = (g: string) => {
     setGametype(g)
@@ -16,11 +16,7 @@ const GameButtonList = (props: GameButtonListProps) => {
     <div className="justify-center flex-initial">
       <div className="grid grid-cols-3 gap-4">
         {gameList.map((game, i) => (
-          <Button
-            key={i}
-            className="focus:bg-OnPrimaryContainer text-OnPrimary"
-            onClick={() => onClickButton(game.label)}
-          >
+          <Button key={i} className="glassbutton text-Neutral" onClick={() => onClickButton(game.label)}>
             {game.label}
           </Button>
         ))}

@@ -2,7 +2,7 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 
 interface NavigationMenuListProps {
   menuItems: Menu[]
-  className?: string 
+  className?: string
 }
 
 interface Menu {
@@ -15,7 +15,7 @@ const NavigatioMenuList = (props: NavigationMenuListProps) => {
 
   return (
     <NavigationMenu.Root className="relative justify-center flex-1 z-1">
-      <NavigationMenu.List className="relative flex justify-end pt-1 pr-4 bg-white">
+      <NavigationMenu.List className="relative flex justify-end pt-1 pr-4 text-Neutral">
         {menuItems.map((item, index) => {
           return (
             <NavigationMenu.Item key={index} className="relative mx-4">

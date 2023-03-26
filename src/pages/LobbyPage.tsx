@@ -10,7 +10,7 @@ const LobbyPage = () => {
   const [gametype, setGametype] = useState<string>("")
 
   return (
-    <div className="flex flex-col justify-center h-full gap-12">
+    <div className="flex flex-col justify-center h-full gap-12 m-4">
       <Label>원하는 게임을 선택하세요!</Label>
       <GameButtonList
         gametype={gametype}
@@ -18,7 +18,6 @@ const LobbyPage = () => {
           setGametype(v)
         }}
       />
-
       <div className="self-end flex-initial">
         <GameselectAlertDialog
           title="게임 유형 선택"
