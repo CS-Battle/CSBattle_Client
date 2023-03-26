@@ -16,7 +16,7 @@ const GameButtonList = (props: GameButtonListProps) => {
     <div className="justify-center flex-initial">
       <div className="grid grid-cols-3 gap-4">
         {gameList.map((game, i) => (
-          <Button key={i} className="glassbutton text-Neutral" onClick={() => onClickButton(game.label)}>
+          <Button key={i} className="glassbutton" onClick={() => onClickButton(game.label)}>
             {game.label}
           </Button>
         ))}

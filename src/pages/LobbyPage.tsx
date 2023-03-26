@@ -26,7 +26,7 @@ const LobbyPage = () => {
           cancel="취소"
           action="매칭 시작하기"
         >
-          <Button className="relative mx-12">게임 시작</Button>
+          <Button className="relative m-6">게임 시작</Button>
         </GameselectAlertDialog>
       </div>
     </div>

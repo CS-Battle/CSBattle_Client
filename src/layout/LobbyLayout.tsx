@@ -17,7 +17,7 @@ const LobbyLayout = () => {
     //   </div>
     // </div>
 
-    <div className="background">
+    <div className="background ">
       <div className="glassframe">
         <LobbyHeader />
         <div className="flex-1">
