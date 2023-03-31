@@ -15,10 +15,7 @@ const TextInput = (props: TextInputProps) => {
     <input
       type="text"
       placeholder={placeholder}
-      className={classNames(
-        "h-12 w-full bg-gray-200 border-gray-400 border-4 rounded-lg font-bold text-2xl text-gray-600 px-3",
-        className
-      )}
+      className={classNames("glassinput h-10 w-full rounded-lg font-medium text-lg text-Neutral px-3", className)}
       style={styles}
       disabled={disabled}
       value={value}
