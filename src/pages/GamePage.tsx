@@ -1,15 +1,23 @@
-import AnswerInput from "components/atoms/AnswerInput/AnswerInput"
+import AnswerType from "components/atoms/AnswerInput/AnswerType"
 // import Button from "components/atoms/Button/Button"
 import PassButton from "components/atoms/Button/PassButton"
 import SubmitButton from "components/atoms/Button/SubmitButton"
 import QuestionBox from "components/atoms/QuestionBox/QuestionBox"
 import React, { useState } from "react"
+import test from "../test.json"
 
+//AnswerType 빨간줄 오류 어떻게 해야 하나?
 const GamePage = () => {
   const [answer, setAnswer] = useState("")
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => setAnswer(event.target.value)
   const onReset = () => setAnswer("")
+
+  const data = test
+  const questionType = data.data.questionType
+  const description = data.data.description
+  // console.log(description)
+  // console.log(questionType)
 
   return (
     <>
@@ -18,8 +26,8 @@ const GamePage = () => {
         <QuestionBox />
       </div>
       {/*정답입력칸*/}
-      <div className="flex p-4 m-2">
-        <AnswerInput answer={answer} onChange={onChange} />
+      <div className="flex">
+        <AnswerType answer={answer} onChange={onChange} questionType={questionType} description={description} />
       </div>
 
       {/*버튼*/}

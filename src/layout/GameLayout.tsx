@@ -12,11 +12,11 @@ const GameLayout = ({ children }: GameLayoutProps) => {
 
   return (
     <div className="background">
-      <div className="glassframe w-full max-w-5xl h-auto">
+      <div className="glassframe w-full max-w-6xl h-auto">
         <div className="statusbox">
           <Avatar name={"user1"}></Avatar>
           <h1>status bar</h1>
-          <Timer time={30} />
+          {/* <Timer time={30} /> */}
           <h1>status bar</h1>
           <Avatar name={"user2"}></Avatar>
         </div>

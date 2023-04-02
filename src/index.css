@@ -73,11 +73,21 @@
   --tw-text-opacity: 1;
   color: rgb(47 47 47 / var(--tw-text-opacity));
 }
+.container {
+  display: flex;
+  width: 90%;
+  background: #123232;
+  padding: 16px;
+  margin: auto;
+  gap: 8px;
+  /* overflow: scroll; */
+}
 .glassinput {
   display: flex;
+  position: relative;
   /* flex-basis: 30rem; */
   width: 80%;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 1rem;

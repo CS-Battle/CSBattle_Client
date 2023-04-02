@@ -1,0 +1,11 @@
+{
+  "data": {
+    "questionidx": "0",
+    "content": "빈칸채우기 문제입니다. 운영체제 문제입니다.",
+    "questionType": "객관식",
+    "csCategory": "운영체제",
+    "description": "여긴 무엇일까요?",
+    "attachmentPath": "얘도 무엇을 뜻하는 걸까요..?"
+  },
+  "message": "get question success"
+}
