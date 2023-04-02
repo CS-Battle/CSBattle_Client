@@ -1,23 +1,21 @@
-import AnswerType from "components/atoms/AnswerInput/AnswerType"
-// import Button from "components/atoms/Button/Button"
-import PassButton from "components/atoms/Button/PassButton"
-import SubmitButton from "components/atoms/Button/SubmitButton"
+import AnswerType from "components/atoms/AnswerInput/AnswerInput"
+import PassButton from "components/atoms/PassButton/PassButton"
+import SubmitButton from "components/atoms/SubmitButton/SubmitButton"
 import QuestionBox from "components/atoms/QuestionBox/QuestionBox"
 import React, { useState } from "react"
-import test from "../test.json"
+import { dummy } from "./const"
 
-//AnswerType 빨간줄 오류 어떻게 해야 하나?
 const GamePage = () => {
   const [answer, setAnswer] = useState("")
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => setAnswer(event.target.value)
   const onReset = () => setAnswer("")
-
-  const data = test
-  const questionType = data.data.questionType
-  const description = data.data.description
-  // console.log(description)
-  // console.log(questionType)
+  const onSubmitClick = () => {
+    onReset()
+    alert("submit answer")
+  }
+  const onPassClick = () => alert("pass this question")
+  const { questionType, description } = dummy.data
 
   return (
     <>
@@ -32,18 +30,11 @@ const GamePage = () => {
 
       {/*버튼*/}
       <div className="flex flex-row place-content-center">
-        <PassButton onClick={() => alert("pass this question")} />
-        <SubmitButton
-          onClick={() => {
-            onReset()
-            alert("submit answer")
-          }}
-        />
+        <PassButton onClick={onPassClick} />
+        <SubmitButton onClick={onSubmitClick} />
       </div>
     </>
   )
 }
 
 export default GamePage
-
-//현재 alert -> use dialog...? hook으로 빼두면 어떨까

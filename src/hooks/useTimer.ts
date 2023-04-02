@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-// import TimeoutAlertDialog from "components/molecules/TimeoutAlertDialog"
 
 export const useTimer = (time: number) => {
   const [seconds, setSeconds] = useState<number>(time)

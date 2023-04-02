@@ -7,8 +7,8 @@ interface GameLayoutProps {
   children?: React.ReactElement
 }
 
-const GameLayout = ({ children }: GameLayoutProps) => {
-  // const {} = props
+const GameLayout = (props: GameLayoutProps) => {
+  const { children } = props
 
   return (
     <div className="background">

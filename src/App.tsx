@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import GameLayout from "layout/GameLayout"
 import LobbyLayout from "layout/LobbyLayout"
 
-import GamePage from "pages/GamePage"
+import GamePage from "pages/GamePage/GamePage"
 import LoginPage from "pages/LoginPage"
 import LobbyPage from "pages/LobbyPage"
 import { useEffect } from "react"

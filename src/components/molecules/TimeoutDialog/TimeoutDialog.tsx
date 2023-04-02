@@ -1,8 +1,8 @@
-import { AlertDialogContent } from "../atoms/radix/AlertDialogContent/AlertDialogContent"
-import Button from "../atoms/Button/Button"
+import { AlertDialogContent } from "../../atoms/radix/AlertDialogContent/AlertDialogContent"
+import Button from "../../atoms/Button/Button"
 import * as AlertDialog from "@radix-ui/react-alert-dialog"
 
-interface TimeoutAlertDialogProps {
+interface TimeoutDialogProps {
   title: string
   description: JSX.Element | string
   children: JSX.Element
@@ -10,9 +10,8 @@ interface TimeoutAlertDialogProps {
   action: JSX.Element | string
 }
 
-const TimeoutAlertDialog = (props: TimeoutAlertDialogProps) => {
+const TimeoutDialog = (props: TimeoutDialogProps) => {
   const { title, description, children, cancel, action } = props
-  const onClickAction = () => {}
   return (
     <AlertDialog.Root>
       <AlertDialog.Trigger>{children}</AlertDialog.Trigger>
@@ -37,4 +36,4 @@ const TimeoutAlertDialog = (props: TimeoutAlertDialogProps) => {
   )
 }
 
-export default TimeoutAlertDialog
+export default TimeoutDialog

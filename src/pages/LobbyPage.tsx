@@ -3,21 +3,19 @@ import Button from "components/atoms/Button/Button"
 import Label from "components/atoms/radix/Label/Label"
 import GameselectAlertDialog from "components/molecules/GameselectAlertDialog/GameselectAtlertDialog"
 import GameButtonList from "components/molecules/GameButtonList/GameButtonList"
+import { GameType, QuestionType } from "types/game"
 
 // 추후 const 데이터 모듈화 처리 필요
 
 const LobbyPage = () => {
-  const [gametype, setGametype] = useState<string>("")
+  const [gametype, setGametype] = useState<GameType>(GameType.null)
+  // FIXME: 이름 변경
+  const _setGameType = (gameType: GameType) => setGametype(gameType)
 
   return (
     <div className="flex flex-col justify-center h-full gap-12 m-4">
       <Label>원하는 게임을 선택하세요!</Label>
-      <GameButtonList
-        gametype={gametype}
-        setGametype={(v: string) => {
-          setGametype(v)
-        }}
-      />
+      <GameButtonList gametype={gametype} setGametype={_setGameType} />
       <div className="self-end flex-initial">
         <GameselectAlertDialog
           title="게임 유형 선택"
