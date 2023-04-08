@@ -60,6 +60,7 @@ module.exports = {
         OnNeutralContainer: "#2F2F2F",
         NeutralVariant: "#3C3C3C",
         OnNeutralVariant: "#FFFFFF",
+        BackgroundBorder: "rgba(255, 255, 255, 0.25)",
         //Error:"#",
         //icon: "#FFE814",
         // */
