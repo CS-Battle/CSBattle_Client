@@ -1,5 +1,6 @@
 import Avatar from "components/atoms/Avatar/Avatar"
 import Timer from "components/atoms/Timer/Timer"
+import Statusbar from "components/atoms/statusbar"
 import Footer from "components/organisms/Footer/Footer"
 import { Outlet } from "react-router-dom"
 
@@ -15,9 +16,9 @@ const GameLayout = (props: GameLayoutProps) => {
       <div className="glassframe w-full max-w-6xl h-auto">
         <div className="statusbox">
           <Avatar name={"user1"}></Avatar>
-          <h1>status bar</h1>
+          <Statusbar num={1}></Statusbar>
           {/* <Timer time={30} /> */}
-          <h1>status bar</h1>
+          <Statusbar num={2}></Statusbar>
           <Avatar name={"user2"}></Avatar>
         </div>
         <div>{children || <Outlet />}</div>

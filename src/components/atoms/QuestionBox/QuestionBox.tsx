@@ -1,13 +1,15 @@
-import { describeList } from "./const"
+interface QuestionBoxProps {
+  content?: string
+}
 
-const QuestionBox = () => {
+const QuestionBox = (props: QuestionBoxProps) => {
+  const { content } = props
+
   return (
     <>
-      {describeList.map((describe, idx) => (
-        <p className="text-Neutral" key={idx}>
-          {describe}
-        </p>
-      ))}
+      <div className="questionBox">
+        <p>{content}</p>
+      </div>
     </>
   )
 }
