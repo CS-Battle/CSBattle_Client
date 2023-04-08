@@ -1,7 +1,7 @@
 import * as RadixLabel from "@radix-ui/react-label"
 
 type LabelProps = {
-  children: string | JSX.Element
+  children: string | string[] | JSX.Element
 }
 
 const Label = (props: LabelProps) => {
