@@ -3,7 +3,7 @@ import Button from "components/atoms/Button/Button"
 import Label from "components/atoms/radix/Label/Label"
 import GameselectAlertDialog from "components/molecules/GameselectAlertDialog/GameselectAtlertDialog"
 import GameButtonList from "components/molecules/GameButtonList/GameButtonList"
-import { GameType, QuestionType } from "types/game"
+import { GameType } from "types/game"
 
 // 추후 const 데이터 모듈화 처리 필요
 
@@ -32,7 +32,7 @@ const LobbyPage = () => {
         >
           {
             (gameLock)?
-              <Button className="relative m-6 bg-gray-400" disabled={gameLock}>게임을 선택하세요</Button> :
+              <Button className="relative m-6 bg-gray-500" disabled={gameLock}>게임을 선택하세요</Button> :
               <Button className="relative m-6" disabled={gameLock}>게임 시작</Button>
           }
         </GameselectAlertDialog>

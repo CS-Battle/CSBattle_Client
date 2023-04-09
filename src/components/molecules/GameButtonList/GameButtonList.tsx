@@ -1,7 +1,6 @@
 import Button from "components/atoms/Button/Button"
 import { GameTitleMap, gameList } from "./const"
 import { GameType } from "types/game"
-import { useEffect } from "react"
 
 interface GameButtonListProps {
   gametype: GameType

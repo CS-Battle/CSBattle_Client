@@ -1,5 +1,4 @@
 import { classNames } from "utils/classNames"
-import React, {FocusEventHandler, useState} from 'react'
 
 type ColorType = "primary" | "none"
 type ColorMap = {
