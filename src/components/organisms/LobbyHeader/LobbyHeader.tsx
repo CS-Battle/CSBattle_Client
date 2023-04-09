@@ -1,10 +1,8 @@
-import ProfileDropdown from "components/molecules/ProfileDropdown/ProfileDropdown";
-import { useLocalstorage } from "hooks/useLocalstorage";
-
-
+import ProfileDropdown from "components/molecules/ProfileDropdown/ProfileDropdown"
+import { useLocalstorage } from "hooks/useLocalstorage"
 
 const LobbyHeader = () => {
-  const {load} = useLocalstorage()
+  const { load } = useLocalstorage()
   const userName = load("userId")
 
   return (
@@ -18,7 +16,7 @@ const LobbyHeader = () => {
           <label>상대방을 기다리는 중 ...</label>
         </div>
         <div className="flex-none ml-auto">
-          <ProfileDropdown name={userName}/>
+          <ProfileDropdown name={userName} />
         </div>
       </nav>
       {/* css 중에 transform - scale 찾아보자. (배율 주기) */}

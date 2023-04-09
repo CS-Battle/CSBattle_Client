@@ -7,7 +7,7 @@ interface AnswerInputProps {
   answer?: string
   onChange?: any
   questionType?: QuestionType
-  description?: string
+  description?: any
 }
 
 const AnswerInput = (props: AnswerInputProps) => {
@@ -20,7 +20,7 @@ const AnswerInput = (props: AnswerInputProps) => {
     case QuestionType.order:
       return <MultipleInput answer={answer} onChange={onChange} />
     case QuestionType.multiChoice:
-      return <SelectionInput />
+      return <SelectionInput description={description} />
     default:
       // TODO: Empty 또는 Error 케이스에 대한 처리
       return <></>
