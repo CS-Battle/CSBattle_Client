@@ -7,10 +7,9 @@ const LobbyHeader = () => {
 
   return (
     <header className="p-3 pt-8 m-2 border-b-4 border-b-BackgroundBorder">
-      <nav className="flex items-center justify-start max-h-full">
-        <h1 className="flex-none">CS Battle</h1>
+      <nav className="flex items-center justify-start max-h-20">
         <div className="flex-none">
-          <i className="temp-info"></i>
+          <img className="" alt="CS Battle" src="CSBattle_logo_2.png"/>
         </div>
         <div className="flex-none mx-8">
           {/* <label>상대방을 기다리는 중 ...</label> */}
