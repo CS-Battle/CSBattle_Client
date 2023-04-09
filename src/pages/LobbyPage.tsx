@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Button from "components/atoms/Button/Button"
 import Label from "components/atoms/radix/Label/Label"
 import GameselectAlertDialog from "components/molecules/GameselectAlertDialog/GameselectAtlertDialog"
@@ -9,8 +9,14 @@ import { GameType, QuestionType } from "types/game"
 
 const LobbyPage = () => {
   const [gametype, setGametype] = useState<GameType>(GameType.null)
+  const [gameLock, setGameLock] = useState<boolean>(true)
+
   // FIXME: 이름 변경
   const _setGameType = (gameType: GameType) => setGametype(gameType)
+
+  useEffect(() => {
+    (gametype !== GameType.null) ? setGameLock(false) : setGameLock(true)
+  }, [gametype])
 
   return (
     <div className="flex flex-col justify-center h-full gap-12 m-4">
@@ -24,7 +30,11 @@ const LobbyPage = () => {
           cancel="취소"
           action="매칭 시작하기"
         >
-          <Button className="relative m-6">게임 시작</Button>
+          {
+            (gameLock)?
+              <Button className="relative m-6 bg-gray-400" disabled={gameLock}>게임을 선택하세요</Button> :
+              <Button className="relative m-6" disabled={gameLock}>게임 시작</Button>
+          }
         </GameselectAlertDialog>
       </div>
     </div>
