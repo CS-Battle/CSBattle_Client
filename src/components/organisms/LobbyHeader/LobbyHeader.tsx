@@ -12,8 +12,8 @@ const LobbyHeader = () => {
         <div className="flex-none">
           <i className="temp-info"></i>
         </div>
-        <div>
-          <label>상대방을 기다리는 중 ...</label>
+        <div className="flex-none mx-8">
+          {/* <label>상대방을 기다리는 중 ...</label> */}
         </div>
         <div className="flex-none ml-auto">
           <ProfileDropdown name={userName} />
