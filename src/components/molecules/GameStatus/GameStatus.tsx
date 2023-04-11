@@ -1,5 +1,5 @@
 import Statusbar from "components/atoms/Statusbar/Statusbar"
-import Timer from "components/atoms/Timer/Timer"
+import TimerBox from "components/atoms/TimerBox/TimerBox"
 import Avatar from "components/atoms/Avatar/Avatar"
 
 const GameStatus = () => {
@@ -7,7 +7,7 @@ const GameStatus = () => {
     <div className="">
       <Avatar name={"user1"} />
       <Statusbar num={1} />
-      <Timer time={30} />
+      <TimerBox time={30} />
       <Statusbar num={2} />
       <Avatar name={"user2"} />
     </div>
