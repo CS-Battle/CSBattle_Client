@@ -32,8 +32,8 @@ const LobbyPage = () => {
         >
           {
             (gameLock)?
-              <Button className="relative m-6 bg-gray-500" disabled={gameLock}>게임을 선택하세요</Button> :
-              <Button className="relative m-6" disabled={gameLock}>게임 시작</Button>
+              <Button className="relative right-4" color="disabled" disabled={gameLock}>게임을 선택하세요</Button> :
+              <Button className="relative right-4" disabled={gameLock}>게임 시작</Button>
           }
         </GameselectAlertDialog>
       </div>
