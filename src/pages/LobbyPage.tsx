@@ -30,11 +30,13 @@ const LobbyPage = () => {
           cancel="취소"
           action="매칭 시작하기"
         >
-          {
-            (gameLock)?
-              <Button className="relative right-4" color="disabled" disabled={gameLock}>게임을 선택하세요</Button> :
-              <Button className="relative right-4" disabled={gameLock}>게임 시작</Button>
-          }
+          <Button
+            className="relative right-4"
+            color={gameLock? "disabled" : "primary"}
+            disabled={gameLock}
+          >
+            {gameLock? "게임을 선택하세요" : "매칭 시작"}
+          </Button>
         </GameselectAlertDialog>
       </div>
     </div>
