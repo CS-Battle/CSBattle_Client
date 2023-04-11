@@ -1,6 +1,6 @@
 import Avatar from "components/atoms/Avatar/Avatar"
 import Timer from "components/atoms/Timer/Timer"
-import Statusbar from "components/atoms/statusbar"
+import Statusbar from "components/atoms/Statusbar/Statusbar"
 import Footer from "components/organisms/Footer/Footer"
 import { Outlet } from "react-router-dom"
 

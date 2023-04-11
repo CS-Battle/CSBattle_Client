@@ -1,5 +1,5 @@
-import Statusbar from "components/atoms/statusbar"
-import Timer from "components/atoms/timer"
+import Statusbar from "components/atoms/Statusbar/Statusbar"
+import Timer from "components/atoms/Timer/Timer"
 import Avatar from "components/atoms/Avatar/Avatar"
 
 const GameStatus = () => {
