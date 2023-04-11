@@ -1,16 +1,20 @@
 import { useTimer } from "hooks/useTimer"
+import {classNames} from "utils/classNames"
 
 interface TimerProps {
+  className?: string
   time: number
+  countup?: boolean
+  color?: string
 }
+
 const Timer = (props: TimerProps) => {
-  const { time } = props
-  const { seconds } = useTimer(time)
+  const { time, countup=false, color="black", className=""} = props
+  const { seconds } = useTimer(time, countup)
+  const _color = "text-" + color
 
   return (
-    <div className="w-10 h-10 bg-OnPrimary rounded-full grid place-items-center border border-OnPrimaryContainer">
-      <p className="text-red-400 text-base">{seconds}</p>
-    </div>
+    <p className={classNames("text-base", _color)}>{seconds}</p>
   )
 }
 
