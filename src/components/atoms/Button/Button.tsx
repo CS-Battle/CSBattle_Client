@@ -1,6 +1,6 @@
 import { classNames } from "utils/classNames"
 
-type ColorType = "primary" | "none"
+type ColorType = "primary" | "none" | "disabled"
 type ColorMap = {
   [key in ColorType]: string
 }
@@ -8,7 +8,8 @@ type ColorMap = {
 
 const colorMap: ColorMap = {
   primary: "bg-Primary text-white",
-  none: "bg-None text-Primary"
+  none: "bg-None text-Primary",
+  disabled: "bg-gray-400 text-white",
 }
 
 interface ButtonProps {
