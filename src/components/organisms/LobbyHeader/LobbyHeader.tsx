@@ -1,4 +1,4 @@
-import {useContext} from 'react'
+import {useContext, useEffect} from 'react'
 import ProfileDropdown from "components/molecules/ProfileDropdown/ProfileDropdown"
 import { useLocalstorage } from "hooks/useLocalstorage"
 import Timer from "components/atoms/Timer/Timer"
@@ -8,6 +8,22 @@ const LobbyHeader = () => {
   const { load } = useLocalstorage()
   const {showTimer} = useContext(LobbyContext)
   const userName = load("userId")
+
+  // 새로고침 방지
+  const preventReload = (e: BeforeUnloadEvent) => {
+    e.preventDefault()
+    e.returnValue = ''
+  }
+
+  useEffect(() => {
+    (() => {
+      window.addEventListener('beforeunload', preventReload)
+    })();
+
+    return () => {
+      window.removeEventListener('beforeunload', preventReload)
+    }
+  }, [])
 
   return (
     <header className="p-3 pt-8 m-2 border-b-4 border-b-BackgroundBorder">
