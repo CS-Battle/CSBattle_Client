@@ -1,9 +1,12 @@
+import {useContext} from 'react'
 import ProfileDropdown from "components/molecules/ProfileDropdown/ProfileDropdown"
 import { useLocalstorage } from "hooks/useLocalstorage"
 import Timer from "components/atoms/Timer/Timer"
+import { LobbyContext } from 'layout/LobbyLayout'
 
 const LobbyHeader = () => {
   const { load } = useLocalstorage()
+  const {showTimer} = useContext(LobbyContext)
   const userName = load("userId")
 
   return (
@@ -12,11 +15,13 @@ const LobbyHeader = () => {
         <div className="flex-none">
           <img className="" alt="CS Battle" src="images/CSBattle_logo_2.png"/>
         </div>
-        <div className="flex flex-none mx-8">
-          <label>상대방을 기다리는 중 ... </label>
-          <Timer className="ml-4" time={0} countup={true} />
-          <label>초</label>
-        </div>
+        {showTimer &&
+          <div className="flex flex-none mx-8">
+            <label>상대방을 기다리는 중 ... </label>
+            <Timer className="ml-4" time={0} countup={true} />
+            <label>초</label>
+          </div>
+        }
         <div className="flex-none ml-auto">
           <ProfileDropdown name={userName} />
         </div>

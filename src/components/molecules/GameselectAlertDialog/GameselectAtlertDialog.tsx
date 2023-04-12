@@ -10,11 +10,13 @@ interface GameselectAlertDialogProps {
   children: JSX.Element
   cancel: JSX.Element | string
   action: JSX.Element | string
+  actionClick?: () => void
   gametype: GameType
 }
 
 const GameselectAlertDialog = (props: GameselectAlertDialogProps) => {
-  const { title, description, children, cancel, action, gametype } = props
+  const { title, description, children, cancel, action, gametype, actionClick } = props
+
   return (
     <AlertDialog.Root>
       <AlertDialog.Trigger>{children}</AlertDialog.Trigger>
@@ -31,7 +33,7 @@ const GameselectAlertDialog = (props: GameselectAlertDialogProps) => {
               <Button className="mx-4" color="cancel">{cancel}</Button>
             </AlertDialog.Cancel>
             <AlertDialog.Action>
-              <Button className="mx-4" color="agree">{action}</Button>
+              <Button className="mx-4" color="agree" onClick={actionClick}>{action}</Button>
             </AlertDialog.Action>
           </div>
         </div>

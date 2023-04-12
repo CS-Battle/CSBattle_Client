@@ -1,18 +1,21 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import Button from "components/atoms/Button/Button"
 import Label from "components/atoms/radix/Label/Label"
 import GameselectAlertDialog from "components/molecules/GameselectAlertDialog/GameselectAtlertDialog"
 import GameButtonList from "components/molecules/GameButtonList/GameButtonList"
 import { GameType } from "types/game"
+import { LobbyContext } from "layout/LobbyLayout"
 
 // 추후 const 데이터 모듈화 처리 필요
 
 const LobbyPage = () => {
   const [gametype, setGametype] = useState<GameType>(GameType.null)
   const [gameLock, setGameLock] = useState<boolean>(true)
+  const {setShowTimer} = useContext(LobbyContext)
 
   // FIXME: 이름 변경
   const _setGameType = (gameType: GameType) => setGametype(gameType)
+  const timerStart = () => setShowTimer(true)
 
   useEffect(() => {
     (gametype !== GameType.null) ? setGameLock(false) : setGameLock(true)
@@ -29,6 +32,7 @@ const LobbyPage = () => {
           description=" 유형으로 게임을 시작하시겠습니까?"
           cancel="취소"
           action="매칭 시작하기"
+          actionClick={timerStart}
         >
           <Button
             className="relative right-4"
