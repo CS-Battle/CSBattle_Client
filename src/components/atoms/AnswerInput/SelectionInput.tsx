@@ -2,7 +2,7 @@ import { useState } from "react"
 import SelectionButton from "../SelectionButton.tsx/SelectionButton"
 
 interface SelectionInputProps {
-  description: Array<any>
+  description: Array<string>
 }
 
 const SelectionInput = (props: SelectionInputProps) => {

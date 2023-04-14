@@ -18,7 +18,7 @@ const AnswerInput = (props: AnswerInputProps) => {
     case QuestionType.shortAnswer:
       return <SingleInput answer={answer} onChange={onChange} />
     case QuestionType.order:
-      return <MultipleInput answer={answer} onChange={onChange} />
+      return <MultipleInput answer={answer} onChange={onChange} description={description} />
     case QuestionType.multiChoice:
       return <SelectionInput description={description} />
     default:
