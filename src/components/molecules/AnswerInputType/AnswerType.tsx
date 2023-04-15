@@ -1,16 +1,17 @@
 import { QuestionType } from "types/game"
-import MultipleInput from "./MultipleInput"
-import SelectionInput from "./SelectionInput"
-import SingleInput from "./SingleInput"
+import MultipleInput from "../../atoms/InputType/MultipleInput"
+import SelectionInput from "../../atoms/InputType/SelectionInput"
+import SingleInput from "../../atoms/InputType/SingleInput"
+import { forwardRef, useImperativeHandle, useRef } from "react"
 
-interface AnswerInputProps {
+interface AnswerInputTypeProps {
   answer?: string
   onChange?: any
   questionType?: QuestionType
   description?: any
 }
 
-const AnswerInput = (props: AnswerInputProps) => {
+const AnswerInputType = (props: AnswerInputTypeProps) => {
   const { answer, onChange, questionType, description } = props
 
   switch (questionType) {
@@ -27,4 +28,4 @@ const AnswerInput = (props: AnswerInputProps) => {
   }
 }
 
-export default AnswerInput
+export default AnswerInputType

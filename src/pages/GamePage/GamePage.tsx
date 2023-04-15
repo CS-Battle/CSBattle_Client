@@ -1,9 +1,9 @@
-import AnswerType from "components/atoms/AnswerInput/AnswerInput"
 import PassButton from "components/atoms/PassButton/PassButton"
 import SubmitButton from "components/atoms/SubmitButton/SubmitButton"
 import QuestionBox from "components/atoms/QuestionBox/QuestionBox"
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { dummy } from "./const"
+import AnswerInputType from "components/molecules/AnswerInputType/AnswerType"
 
 const GamePage = () => {
   const [answer, setAnswer] = useState("")
@@ -25,7 +25,7 @@ const GamePage = () => {
       </div>
       {/*정답입력칸*/}
       <div className="flex p-4">
-        <AnswerType answer={answer} onChange={onChange} questionType={questionType} description={description} />
+        <AnswerInputType answer={answer} onChange={onChange} questionType={questionType} description={description} />
       </div>
 
       {/*버튼*/}

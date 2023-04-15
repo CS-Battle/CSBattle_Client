@@ -1,4 +1,5 @@
 import Button from "components/atoms/Button/Button"
+import { phrases } from "./const"
 
 interface PassButtonProps {
   onClick?: () => void
@@ -9,7 +10,7 @@ const PassButton = (props: PassButtonProps) => {
 
   return (
     <Button className="m-5 p-2 w-44" onClick={onClick}>
-      pass button
+      {phrases}
     </Button>
   )
 }

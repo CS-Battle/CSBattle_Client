@@ -7,8 +7,6 @@ interface MutipleInputProps {
   description: Array<any> //답변입력 개수
 }
 
-//state 다르게 설정 어떻게 하지 지금 입력이 다같이 되는뎅
-//prevstate?
 const MultipleInput = (props: MutipleInputProps) => {
   const { description } = props
 
@@ -21,7 +19,7 @@ const MultipleInput = (props: MutipleInputProps) => {
   //const { answer0, answer1, answer2, answer3 } = answer 어떻게해야..?
   // const { } = answer
 
-  const handleTextValueChange = (e: { target: { name: any; value: any } }) => {
+  const handleTextValueChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target
     setAnswer({
       ...answer,
@@ -36,6 +34,14 @@ const MultipleInput = (props: MutipleInputProps) => {
   //     answer1: "",
   //     answer2: "",
   //     answer3: "",
+  //   })
+  // }
+
+  // const onReset = (e: { target: { name: string; value: string } }) => {
+  //   const { name, value = "" } = e.target
+  //   setAnswer({
+  //     ...answer,
+  //     [name]: value,
   //   })
   // }
 
@@ -57,3 +63,6 @@ const MultipleInput = (props: MutipleInputProps) => {
 }
 
 export default MultipleInput
+function useImperativeHandleRef(ref: any, arg1: () => {}) {
+  throw new Error("Function not implemented.")
+}
