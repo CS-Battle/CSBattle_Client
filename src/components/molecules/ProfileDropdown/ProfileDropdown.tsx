@@ -33,9 +33,6 @@ const ProfileDropdown = (props: ProfileDropdownProps) => {
                 {item.title}
               </DropdownMenu.Item>
             )
-            {
-              /* <DropdownMenu.Separator className="h-[1px] bg-gray-700 m-[5px]" /> */
-            }
           })}
           <DropdownMenu.Arrow className="fill-PrimaryVariantContainer" />
         </DropdownMenu.Content>
