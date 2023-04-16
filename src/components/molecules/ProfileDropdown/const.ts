@@ -12,6 +12,6 @@ export const profileDropdownItems = [
     url: "#",
   },
   {
-    title: "로그아웃"
-  }
+    title: "로그아웃",
+  },
 ]

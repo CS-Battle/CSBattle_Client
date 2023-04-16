@@ -11,7 +11,7 @@ const colorMap: ColorMap = {
   none: "bg-None text-Primary",
   disabled: "bg-gray-400 text-white",
   cancel: "bg-secondaryVariant2 text-black",
-  agree: "bg-PrimaryVariantContainer text-black"
+  agree: "bg-PrimaryVariantContainer text-black",
 }
 
 interface ButtonProps {
@@ -26,7 +26,7 @@ interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, color = "primary", styles, className = "", disabled = false, onClick} = props
+  const { children, color = "primary", styles, className = "", disabled = false, onClick } = props
 
   return (
     <button
@@ -34,7 +34,6 @@ const Button = (props: ButtonProps) => {
       style={styles}
       disabled={disabled}
       onClick={onClick}
-      // onBlur={handleBlur}
     >
       {children}
     </button>

@@ -1,8 +1,7 @@
 import { QuestionType } from "types/game"
-import MultipleInput from "../../atoms/InputType/MultipleInput"
-import SelectionInput from "../../atoms/InputType/SelectionInput"
-import SingleInput from "../../atoms/InputType/SingleInput"
-import { forwardRef, useImperativeHandle, useRef } from "react"
+import MultipleInput from "../../atoms/Input/MultipleInput"
+import SelectionInput from "../../atoms/Input/SelectionInput"
+import SingleInput from "../../atoms/Input/SingleInput"
 
 interface AnswerInputTypeProps {
   answer?: string

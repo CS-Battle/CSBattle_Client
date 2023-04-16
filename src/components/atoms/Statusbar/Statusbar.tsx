@@ -3,6 +3,7 @@ import { classNames } from "utils/classNames"
 interface StatusbarProps {
   num: number
 }
+
 const Statusbar = (props: StatusbarProps) => {
   const { num } = props
   return (

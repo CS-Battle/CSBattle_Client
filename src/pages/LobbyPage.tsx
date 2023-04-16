@@ -11,14 +11,14 @@ import { LobbyContext } from "layout/LobbyLayout"
 const LobbyPage = () => {
   const [gametype, setGametype] = useState<GameType>(GameType.null)
   const [gameLock, setGameLock] = useState<boolean>(true)
-  const {setShowTimer} = useContext(LobbyContext)
+  const { setShowTimer } = useContext(LobbyContext)
 
   // FIXME: 이름 변경
   const _setGameType = (gameType: GameType) => setGametype(gameType)
   const timerStart = () => setShowTimer(true)
 
   useEffect(() => {
-    (gametype !== GameType.null) ? setGameLock(false) : setGameLock(true)
+    gametype !== GameType.null ? setGameLock(false) : setGameLock(true)
   }, [gametype])
 
   return (
@@ -34,12 +34,8 @@ const LobbyPage = () => {
           action="매칭 시작하기"
           actionClick={timerStart}
         >
-          <Button
-            className="relative right-4"
-            color={gameLock? "disabled" : "primary"}
-            disabled={gameLock}
-          >
-            {gameLock? "게임을 선택하세요" : "매칭 시작"}
+          <Button className="relative right-4" color={gameLock ? "disabled" : "primary"} disabled={gameLock}>
+            {gameLock ? "게임을 선택하세요" : "매칭 시작"}
           </Button>
         </GameselectAlertDialog>
       </div>

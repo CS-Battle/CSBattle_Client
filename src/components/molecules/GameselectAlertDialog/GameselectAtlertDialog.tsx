@@ -30,10 +30,14 @@ const GameselectAlertDialog = (props: GameselectAlertDialogProps) => {
 
           <div className="mt-[25px] flex justify-end">
             <AlertDialog.Cancel>
-              <Button className="mx-4" color="cancel">{cancel}</Button>
+              <Button className="mx-4" color="cancel">
+                {cancel}
+              </Button>
             </AlertDialog.Cancel>
             <AlertDialog.Action>
-              <Button className="mx-4" color="agree" onClick={actionClick}>{action}</Button>
+              <Button className="mx-4" color="agree" onClick={actionClick}>
+                {action}
+              </Button>
             </AlertDialog.Action>
           </div>
         </div>

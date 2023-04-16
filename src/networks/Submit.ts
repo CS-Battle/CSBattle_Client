@@ -1,28 +1,26 @@
-import { useState } from "react"
 import { useLocalstorage } from "hooks/useLocalstorage"
+import { requestOptions } from "utils/request/options"
 
 interface SubmitProps {
-  battleId: string,
-  answer?: string,
+  battleId: string
+  answer?: string
 }
-const Submit = (props: SubmitProps) => {
+const Submit = async (props: SubmitProps) => {
   const { load } = useLocalstorage()
   const userId = load("userId") || ""
-  const {battleId="", answer=""} = props
+  const { battleId = "", answer = "" } = props
 
-  fetch(`http://localhost:8080/battle/answer`, {
-    headers: {
-      Accept: "application/json, text/plain, */*",
-      "Content-Type": "application/json;charset=utf-8",
-    },
-    method: "POST",
-    body: JSON.stringify({
+  const response = await fetch(
+    `http://localhost:8080/battle/answer`,
+    requestOptions("POST", {
       battleId: battleId,
       userId: userId,
       answer: answer,
-    }),
-  })
-    .then((response) => response.json())
-    .then((result) => console.log("result after answer submit : ", result))
+    })
+  )
+  const result = await response.json()
+
+  console.log(result)
 }
+
 export default Submit

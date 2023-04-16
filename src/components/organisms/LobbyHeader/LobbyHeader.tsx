@@ -18,9 +18,7 @@ const LobbyHeader = () => {
   }
 
   useEffect(() => {
-    ;(() => {
-      window.addEventListener("beforeunload", preventReload)
-    })()
+    window.addEventListener("beforeunload", preventReload)
 
     return () => {
       window.removeEventListener("beforeunload", preventReload)
@@ -36,7 +34,7 @@ const LobbyHeader = () => {
         {showTimer && (
           <div className="flex flex-none mx-8">
             <label>상대방을 기다리는 중 ... </label>
-            <Timer className="ml-4" time={0} countup={true} />
+            <Timer time={0} countup={true} />
             <label>초</label>
           </div>
         )}

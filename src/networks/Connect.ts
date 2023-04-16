@@ -1,18 +1,17 @@
-import { useState } from "react";
-import { useLocalstorage } from "hooks/useLocalstorage";
-import GetQuestion from "networks/GetQuestion";
-
+import { useState } from "react"
+import { useLocalstorage } from "hooks/useLocalstorage"
+import GetQuestion from "networks/GetQuestion"
 
 type Question = {
-  questionId: string;
-  content: string;
-};
+  questionId: string
+  content: string
+}
 
 type AnswerResult = {
-  userId: string;
-  questionIdx: number;
-  isCorrect: boolean;
-};
+  userId: string
+  questionIdx: number
+  isCorrect: boolean
+}
 
 const Connect = () => {
   const { load } = useLocalstorage()
@@ -23,8 +22,8 @@ const Connect = () => {
   const eventSource = new EventSource(`http://localhost:8080/connect/` + userId)
 
   eventSource.addEventListener("sse", (event) => {
-    console.log("event.data : " + event.data);
-  });
+    console.log("event.data : " + event.data)
+  })
 
   eventSource.addEventListener(`battle-start`, (e) => {
     const { data: battle_Id } = e
@@ -35,44 +34,38 @@ const Connect = () => {
   })
 
   eventSource.addEventListener(`answer-result`, (e) => {
-    const { data: answerResult } = e;
-    const answerResultJson = JSON.parse(answerResult) as AnswerResult;
+    const { data: answerResult } = e
+    const answerResultJson = JSON.parse(answerResult) as AnswerResult
 
-    console.log("answerResultJson : ", answerResultJson);
+    console.log("answerResultJson : ", answerResultJson)
 
     if (answerResultJson.isCorrect) {
-      alert(
-        answerResultJson.userId + "님이 "
-        + answerResultJson.questionIdx + "번째 문제의 정답을 맞추셨습니다!"
-      )
+      alert(answerResultJson.userId + "님이 " + answerResultJson.questionIdx + "번째 문제의 정답을 맞추셨습니다!")
     } else {
-      alert(
-        answerResultJson.userId + "님이 "
-        + answerResultJson.questionIdx + "번째 문제를 틀리셨습니다 ㅜㅜ"
-      )
+      alert(answerResultJson.userId + "님이 " + answerResultJson.questionIdx + "번째 문제를 틀리셨습니다 ㅜㅜ")
     }
   })
 
   eventSource.addEventListener(`opponent-left`, (e) => {
-    const { data: message } = e;
-    alert(message);
-    window.location.reload();
-  });
+    const { data: message } = e
+    alert(message)
+    window.location.reload()
+  })
 
   eventSource.addEventListener(`checking-connection`, (e) => {
-    const { data: message } = e;
-  });
+    const { data: message } = e
+  })
 
   eventSource.addEventListener("Question", (e) => {
-    const { data: questionJson } = e;
-    const question = JSON.parse(questionJson) as Question;
-    console.log("ID : ", question.questionId, "문제 : ", question.content);
-    setQuestionId(question.questionId);
-  });
+    const { data: questionJson } = e
+    const question = JSON.parse(questionJson) as Question
+    console.log("ID : ", question.questionId, "문제 : ", question.content)
+    setQuestionId(question.questionId)
+  })
 
   eventSource.addEventListener("timeOut", (e) => {
-    const { data: timelimit } = e;
-    alert(timelimit);
-  });
+    const { data: timelimit } = e
+    alert(timelimit)
+  })
 }
-export default Connect;
+export default Connect

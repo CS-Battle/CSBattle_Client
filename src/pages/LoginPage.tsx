@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getRandomNumber } from "utils/randomNumber"
 import { UserCircleIcon } from "@heroicons/react/24/solid"
-import TextInput from "components/atoms/TextInput/TextInput"
+import TextInput from "components/atoms/Input/TextInput"
 
 const LoginPage = () => {
   const { save, load } = useLocalstorage()

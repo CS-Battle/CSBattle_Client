@@ -1,10 +1,9 @@
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
-import {Menu} from 'types/menu'
+import { Menu } from "types/menu"
 interface NavigationMenuListProps {
   menuItems: Menu[]
   className?: string
 }
-
 
 const NavigatioMenuList = (props: NavigationMenuListProps) => {
   const { menuItems } = props

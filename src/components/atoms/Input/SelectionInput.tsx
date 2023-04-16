@@ -9,7 +9,7 @@ const SelectionInput = (props: SelectionInputProps) => {
   const { description } = props
   const [isButtonSelect, setIsButtonSelect] = useState<Array<boolean>>(Array(description.length).fill(false))
 
-  const handleClick = (idx: number) => {
+  const handleClick = (idx: number) => () => {
     setIsButtonSelect((prev) => [...prev.slice(0, idx), !prev[idx], ...prev.slice(idx + 1)])
   }
 
@@ -20,8 +20,7 @@ const SelectionInput = (props: SelectionInputProps) => {
           <SelectionButton
             key={index}
             isSelected={isButtonSelect[index]}
-            handleClick={handleClick}
-            elementIndex={index}
+            handleClick={handleClick(index)}
             content={elm}
           />
         )
