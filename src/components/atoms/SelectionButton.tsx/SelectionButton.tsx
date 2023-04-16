@@ -19,4 +19,5 @@ const SelectionButton = (props: SelectionButtonProps) => {
     </Button>
   )
 }
+
 export default SelectionButton

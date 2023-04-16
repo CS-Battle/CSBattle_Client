@@ -6,11 +6,9 @@ const QuestionBox = (props: QuestionBoxProps) => {
   const { content } = props
 
   return (
-    <>
-      <div className="questionBox">
-        <p>{content}</p>
-      </div>
-    </>
+    <div className="questionBox">
+      <p>{content}</p>
+    </div>
   )
 }
 

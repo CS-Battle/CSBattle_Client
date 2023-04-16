@@ -1,19 +1,18 @@
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
 import Label from "components/atoms/radix/Label/Label"
-import {profileDropdownItems} from './const'
+import { profileDropdownItems } from "./const"
 
 interface ProfileDropdownProps {
   name: string
 }
 
-const ProfileDropdown = (props:ProfileDropdownProps) => {
-  const {name="ㅇㅇ" } = props
+const ProfileDropdown = (props: ProfileDropdownProps) => {
+  const { name = "ㅇㅇ" } = props
   return (
-    <>
     <DropdownMenu.Root>
       <DropdownMenu.Trigger>
-        <div className='flex flex-row'>
+        <div className="flex flex-row">
           <Label>{name}님, 환영합니다!</Label>
           <ChevronDownIcon className="my-2" />
         </div>
@@ -34,14 +33,14 @@ const ProfileDropdown = (props:ProfileDropdownProps) => {
                 {item.title}
               </DropdownMenu.Item>
             )
-          {/* <DropdownMenu.Separator className="h-[1px] bg-gray-700 m-[5px]" /> */}
-        })}
+            {
+              /* <DropdownMenu.Separator className="h-[1px] bg-gray-700 m-[5px]" /> */
+            }
+          })}
           <DropdownMenu.Arrow className="fill-PrimaryVariantContainer" />
-
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
-    </>
   )
 }
 
