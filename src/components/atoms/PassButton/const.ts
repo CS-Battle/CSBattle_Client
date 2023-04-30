@@ -1,1 +1,1 @@
-export const phrases = "submit button"
+export const phrases = "pass button"
