@@ -1,17 +1,15 @@
-import { useLocalstorage } from "hooks/useLocalstorage"
 import { requestOptions } from "utils/request/options"
 
 interface SubmitProps {
+  userId: string
   battleId: string
   answer?: string
 }
-const Submit = async (props: SubmitProps) => {
-  const { load } = useLocalstorage()
-  const userId = load("userId") || ""
-  const { battleId = "", answer = "" } = props
+const submit = async (props: SubmitProps) => {
+  const { userId="", battleId = "", answer = "" } = props
 
   const response = await fetch(
-    `http://localhost:8080/battle/answer`,
+    process.env.REACT_APP_SERVER_URL + `battle/answer`,
     requestOptions("POST", {
       battleId: battleId,
       userId: userId,
@@ -23,4 +21,4 @@ const Submit = async (props: SubmitProps) => {
   console.log(result)
 }
 
-export default Submit
+export default submit

@@ -1,6 +1,4 @@
-import { useState } from "react"
-import { useLocalstorage } from "hooks/useLocalstorage"
-import GetQuestion from "networks/GetQuestion"
+import {getQuestion} from "utils/networks/getQuestion"
 
 type Question = {
   questionId: string
@@ -13,23 +11,20 @@ type AnswerResult = {
   isCorrect: boolean
 }
 
-const Connect = () => {
-  const { load } = useLocalstorage()
-  const [battleId, setBattleId] = useState("")
-  const [questionId, setQuestionId] = useState("")
-  const userId = load("userId") || ""
+export function connect(userId: string) {
+  // const [questionId, setQuestionId] = useState("")
+  const _userId = userId || ""
 
-  const eventSource = new EventSource(`http://localhost:8080/connect/` + userId)
+  const eventSource = new EventSource(process.env.REACT_APP_SERVER_URL + 'connect/' + _userId)
 
   eventSource.addEventListener("sse", (event) => {
     console.log("event.data : " + event.data)
   })
 
   eventSource.addEventListener(`battle-start`, (e) => {
-    const { data: battle_Id } = e
-    console.log("battle started!! battle id : ", battle_Id)
-    setBattleId(battle_Id)
-    GetQuestion()
+    const { data: battleId } = e
+    console.log("battle started!! battle id : ", battleId)
+    getQuestion({ userId: _userId, battleId: battleId })
     alert("battle started!!")
   })
 
@@ -60,7 +55,6 @@ const Connect = () => {
     const { data: questionJson } = e
     const question = JSON.parse(questionJson) as Question
     console.log("ID : ", question.questionId, "문제 : ", question.content)
-    setQuestionId(question.questionId)
   })
 
   eventSource.addEventListener("timeOut", (e) => {
@@ -68,4 +62,3 @@ const Connect = () => {
     alert(timelimit)
   })
 }
-export default Connect
