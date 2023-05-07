@@ -11,7 +11,7 @@ import { connect } from "utils/networks/connect"
 // 추후 const 데이터 모듈화 처리 필요
 
 const LobbyPage = () => {
-  const [gametype, setGametype] = useState<GameType>(GameType.null)
+  const [gametype, setGametype] = useState<GameType>("null")
   const [gameLock, setGameLock] = useState<boolean>(true)
   const { setShowTimer } = useContext(LobbyContext)
   const { load } = useLocalstorage()
@@ -24,7 +24,7 @@ const LobbyPage = () => {
   }
 
   useEffect(() => {
-    gametype !== GameType.null ? setGameLock(false) : setGameLock(true)
+    gametype !== "null" ? setGameLock(false) : setGameLock(true)
   }, [gametype])
 
   return (

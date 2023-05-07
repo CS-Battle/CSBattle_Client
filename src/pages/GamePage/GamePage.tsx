@@ -4,6 +4,7 @@ import QuestionBox from "ui/game/atoms/QuestionBox/QuestionBox"
 import React, { useState } from "react"
 import { dummy } from "./const"
 import AnswerInputType from "ui/game/molecules/AnswerInputType/AnswerType"
+import { QuestionTypeMap } from "ui/game/molecules/GameButtonList/const"
 
 const GamePage = () => {
   const [answer, setAnswer] = useState("")
@@ -25,7 +26,12 @@ const GamePage = () => {
       </div>
       {/*정답입력칸*/}
       <div className="flex p-4">
-        <AnswerInputType answer={answer} onChange={onChange} questionType={questionType} description={description} />
+        <AnswerInputType
+          answer={answer}
+          onChange={onChange}
+          questionType={QuestionTypeMap[questionType]}
+          description={description}
+        />
       </div>
 
       {/*버튼*/}

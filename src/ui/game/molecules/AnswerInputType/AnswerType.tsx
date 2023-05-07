@@ -14,12 +14,12 @@ const AnswerInputType = (props: AnswerInputTypeProps) => {
   const { answer, onChange, questionType, description } = props
 
   switch (questionType) {
-    case QuestionType.blank:
-    case QuestionType.shortAnswer:
+    case "blank":
+    case "shortAnswer":
       return <SingleInput answer={answer} onChange={onChange} />
-    case QuestionType.order:
+    case "order":
       return <MultipleInput answer={answer} onChange={onChange} description={description} />
-    case QuestionType.multiChoice:
+    case "multiChoice":
       return <SelectionInput description={description} />
     default:
       // TODO: Empty 또는 Error 케이스에 대한 처리
