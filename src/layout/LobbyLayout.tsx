@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { createContext, useState } from "react"
-import LobbyHeader from "components/organisms/LobbyHeader/LobbyHeader"
-import Footer from "components/organisms/Footer/Footer"
+import LobbyHeader from "ui/lobby/organisms/LobbyHeader/LobbyHeader"
+import Footer from "ui/base/organisms/Footer/Footer"
 
 export const LobbyContext = createContext({ showTimer: false, setShowTimer: (showTimer: boolean) => {} })
 

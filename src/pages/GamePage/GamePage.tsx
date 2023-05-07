@@ -1,9 +1,9 @@
-import PassButton from "components/atoms/PassButton/PassButton"
-import SubmitButton from "components/atoms/SubmitButton/SubmitButton"
-import QuestionBox from "components/atoms/QuestionBox/QuestionBox"
-import React, { useRef, useState } from "react"
+import PassButton from "ui/game/atoms/PassButton/PassButton"
+import SubmitButton from "ui/game/atoms/SubmitButton/SubmitButton"
+import QuestionBox from "ui/game/atoms/QuestionBox/QuestionBox"
+import React, { useState } from "react"
 import { dummy } from "./const"
-import AnswerInputType from "components/molecules/AnswerInputType/AnswerType"
+import AnswerInputType from "ui/game/molecules/AnswerInputType/AnswerType"
 
 const GamePage = () => {
   const [answer, setAnswer] = useState("")

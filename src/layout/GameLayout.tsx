@@ -1,7 +1,7 @@
-import Avatar from "components/atoms/Avatar/Avatar"
-import TimerBox from "components/atoms/TimerBox/TimerBox"
-import Statusbar from "components/atoms/Statusbar/Statusbar"
-import Footer from "components/organisms/Footer/Footer"
+import Avatar from "ui/base/atoms/Avatar/Avatar"
+// import TimerBox from "ui/base/molecules/TimerBox/TimerBox"
+import Statusbar from "ui/base/atoms/Statusbar/Statusbar"
+import Footer from "ui/base/organisms/Footer/Footer"
 import { Outlet } from "react-router-dom"
 
 interface GameLayoutProps {

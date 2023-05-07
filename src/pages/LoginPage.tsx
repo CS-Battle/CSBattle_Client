@@ -1,10 +1,10 @@
-import Button from "components/atoms/Button/Button"
+import Button from "ui/base/atoms/Button/Button"
 import { useLocalstorage } from "hooks/useLocalstorage"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getRandomNumber } from "utils/randomNumber"
 import { UserCircleIcon } from "@heroicons/react/24/solid"
-import TextInput from "components/atoms/Input/TextInput"
+import TextInput from "ui/base/atoms/TextInput/TextInput"
 
 const LoginPage = () => {
   const { save, load } = useLocalstorage()
@@ -18,7 +18,7 @@ const LoginPage = () => {
     if (userId !== null) {
       setNickname(userId)
     }
-  }, [])
+  }, [load])
 
   const onNicknameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNickname(event.target.value)

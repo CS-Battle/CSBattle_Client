@@ -1,4 +1,4 @@
-import {getQuestion} from "utils/networks/getQuestion"
+import { getQuestion } from "utils/networks/getQuestion"
 
 type Question = {
   questionId: string
@@ -15,7 +15,7 @@ export function connect(userId: string) {
   // const [questionId, setQuestionId] = useState("")
   const _userId = userId || ""
 
-  const eventSource = new EventSource(process.env.REACT_APP_SERVER_URL + 'connect/' + _userId)
+  const eventSource = new EventSource(process.env.REACT_APP_SERVER_URL + "connect/" + _userId)
 
   eventSource.addEventListener("sse", (event) => {
     console.log("event.data : " + event.data)
@@ -48,7 +48,7 @@ export function connect(userId: string) {
   })
 
   eventSource.addEventListener(`checking-connection`, (e) => {
-    const { data: message } = e
+    // const { data: message } = e
   })
 
   eventSource.addEventListener("Question", (e) => {
