@@ -30,12 +30,12 @@ export const QuestionTitleMap: {
   multiChoice: "",
 }
 
-export const QuestionTypeMap: { [key in number]: QuestionType } = {
-  0: "null",
-  1: "blank",
-  2: "shortAnswer",
-  3: "order",
-  4: "multiChoice",
+export const QuestionTypeMap: { [key in string]: QuestionType } = {
+  null: "null",
+  빈칸채우기: "blank",
+  단답식: "shortAnswer",
+  순서맞추기: "order",
+  객관식: "multiChoice",
 }
 
 export const random = { id: "", label: "Random" }

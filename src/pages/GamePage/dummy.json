@@ -1,0 +1,18 @@
+{
+  "status": "OK",
+  "message": "Get Question Success",
+  "data": {
+    "questionId": null,
+    "content": "SQL의 JOIN연산에 대해 잘못된 설명을 고르시오",
+    "answer": null,
+    "csCategory": "데이터베이스",
+    "questionType": "객관식",
+    "description": [
+      "SQL에서 INNER JOIN은 Cartesian product와 WHERE절로 구현할 수 있다.",
+      "NATURAL JOIN은 INNER JOIN에서만 가능하다.",
+      "INNER JOIN에서는 정보가 손실될 수 있다.",
+      "RIGHT OUTER JOIN은 JOIN의 우측에 위치한 테이블의 모든 튜플 정보를 보존한다."
+    ],
+    "attachmentPath": null
+  }
+}
