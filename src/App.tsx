@@ -18,7 +18,7 @@ function App() {
     if (userId === null && window.location.pathname !== "/login") {
       window.location.href = "/login"
     }
-  }, [])
+  }, [load])
 
   return (
     <Router>
