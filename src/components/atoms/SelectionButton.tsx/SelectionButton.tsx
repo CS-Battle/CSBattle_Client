@@ -11,7 +11,7 @@ const SelectionButton = (props: SelectionButtonProps) => {
 
   return (
     <Button
-      className={`${isSelected ? "w-1/4 h-auto bg-primaryVariant1" : "glassbutton w-1/4 h-auto"}`}
+      className={`${isSelected ? "glassbuttonSelected w-1/4 h-auto " : "glassbutton w-1/4 h-auto"}`}
       onClick={handleClick}
     >
       <h1>{content}</h1>
