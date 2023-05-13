@@ -15,11 +15,11 @@ const GameLayout = (props: GameLayoutProps) => {
     <div className="background">
       <div className="w-full h-auto max-w-6xl glassframe">
         <div className="statusbox">
-          <Avatar name={"user1"}></Avatar>
+          <Avatar name={"user1"} image="https://source.boringavatars.com/beam/"></Avatar>
           <Statusbar num={1}></Statusbar>
           {/* <TimerBox time={30} /> */}
           <Statusbar num={2}></Statusbar>
-          <Avatar name={"user2"}></Avatar>
+          <Avatar name={"user2"} image="https://source.boringavatars.com/beam"></Avatar>
         </div>
         <div>{children || <Outlet />}</div>
       </div>
