@@ -5,10 +5,11 @@ import { GameType } from "types/game"
 interface GameButtonListProps {
   gametype: GameType
   setGametype: (type: GameType) => void
+  disabled?: boolean
 }
 
 const GameButtonList = (props: GameButtonListProps) => {
-  const { setGametype } = props
+  const { setGametype, disabled=false } = props
   const onClickButton = (gameType: GameType) => () => setGametype(gameType)
 
   return (
@@ -17,8 +18,9 @@ const GameButtonList = (props: GameButtonListProps) => {
         {gameList.map((game, i) => (
           <Button
             key={i}
-            className="glassbutton focus:bg-OnPrimaryVariantContainer focus:text-OnPrimary"
+            className="glassbutton focus:bg-OnPrimaryVariantContainer focus:text-OnPrimary disabled:text-opacity-80"
             onClick={onClickButton(game.type)}
+            disabled={disabled}
           >
             {GameTitleMap[game.type]}
           </Button>
