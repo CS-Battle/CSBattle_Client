@@ -13,6 +13,7 @@ import { connect } from "utils/networks/connect"
 const LobbyPage = () => {
   const [gametype, setGametype] = useState<GameType>("null")
   const [gameLock, setGameLock] = useState<boolean>(true)
+  const [matchLock, setMatchLock] = useState<boolean>(false)
   const { setShowTimer } = useContext(LobbyContext)
   const { load } = useLocalstorage()
   const userId = load("userId")
@@ -20,6 +21,7 @@ const LobbyPage = () => {
   const _setGameType = (gameType: GameType) => setGametype(gameType)
   const matchingStart = (userId: string) => async () => {
     setShowTimer(true)
+    setMatchLock(true)
     connect(userId)
   }
 
@@ -30,7 +32,7 @@ const LobbyPage = () => {
   return (
     <div className="flex flex-col justify-center h-full gap-12 m-4">
       <Label>원하는 게임을 선택하세요!</Label>
-      <GameButtonList gametype={gametype} setGametype={_setGameType} />
+      <GameButtonList gametype={gametype} setGametype={_setGameType} disabled={matchLock}/>
       <div className="self-end flex-initial">
         <GameSelectAlertDialog
           title="게임 유형 선택"
