@@ -30,6 +30,7 @@
 }
 .background {
   display: flex;
+  position: relative;
   justify-content: center;
   flex-direction: column;
   width: 100%;
@@ -44,6 +45,13 @@
   padding-left: 8%;
   padding-right: 8%;
 }
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
 .glassframe {
   display: flex;
   flex-direction: column;
@@ -117,11 +125,12 @@
 .statusbox {
   display: flex;
   flex-direction: row;
+  /* width: max-content; */
   place-content: center;
   margin-top: 0.5rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  padding: 1.25rem;
+  padding: 1rem;
   justify-content: space-between;
   align-items: center;
 }
@@ -134,4 +143,21 @@
   text-align: justify;
   padding: 5px;
   margin: 0 auto;
+}
+.progress {
+  appearance: none;
+  flex: 1;
+}
+::-webkit-progress-bar {
+  background: #ffffff;
+  border-radius: 8px;
+  width: 22vw;
+  box-shadow: inset 3px 3px 10px #ccc;
+  overflow: hidden;
+}
+::-webkit-progress-value {
+  border-radius: 8px;
+  background: #002a71;
+  background: -webkit-linear-gradient(to right, #78a3eb, #002a71);
+  background: linear-gradient(to right, #78a3eb, #002a71);
 }

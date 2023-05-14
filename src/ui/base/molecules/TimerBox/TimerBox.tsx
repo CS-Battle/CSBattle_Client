@@ -11,10 +11,11 @@ const TimerBox = (props: TimerBoxProps) => {
   const { seconds } = useTimer(time, countup)
 
   return (
-    <div className="grid w-10 h-10 border rounded-full bg-OnPrimary place-items-center border-OnPrimaryContainer">
-      {/* <p className="text-base text-red-400">{seconds}</p> */}
-      <Timer time={seconds} color="text-red-400" countup={countup} />
-    </div>
+    <Timer time={seconds} color="text-secondaryVariant4 text-5xl font-black m-8" countup={countup} />
+    // <div className="grid w-10 h-10 border rounded-full bg-OnPrimary place-items-center border-OnPrimaryContainer">
+    //   {/* <p className="text-base text-red-400">{seconds}</p> */}
+    //   <Timer time={seconds} color="text-red-400" countup={countup} />
+    // </div>
   )
 }
 
