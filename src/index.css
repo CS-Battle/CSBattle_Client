@@ -50,8 +50,16 @@
   width: 100%;
   height: 100%;
   background-size: cover;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 50;
+  inset: 0;
+  margin: 0 auto;
 }
-
 .glassframe {
   display: flex;
   flex-direction: column;
@@ -160,4 +168,13 @@
   background: #002a71;
   background: -webkit-linear-gradient(to right, #78a3eb, #002a71);
   background: linear-gradient(to right, #78a3eb, #002a71);
+}
+.timerText {
+  color: #d82ba7;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  font-size: 3rem;
+  line-height: 0.3;
+  font-weight: 900;
+  margin: 2rem;
 }
