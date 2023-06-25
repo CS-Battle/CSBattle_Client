@@ -35,19 +35,21 @@ const GameLayout = (props: GameLayoutProps) => {
   return (
     <div className="background">
       {isLoading ? (
-        <div className="overlay">
-          <div className="timerText">Game will be start after</div>
-          <div className="timerText">{remainingTime} seconds</div>
+        <div className="bg-transparent">
+          <div className="text-center timerText">{remainingTime}초 후에 게임이 시작됩니다!</div>
         </div>
       ) : (
-        <div className="w-full h-auto max-w-6xl glassframe">
-          <GameStatus time={time2} />
-          <div>{children || <Outlet />}</div>
-        </div>
+        <>
+          <div className="w-full h-auto max-w-6xl glassframe">
+            <GameStatus time={time2} />
+            <div>{children || <Outlet />}</div>
+          </div>
+          <div className="relative justify-center flex-none px-7 py-7">
+            <Footer />
+          </div>
+        </>
       )}
-      <div className="relative justify-center flex-none px-7 py-7">
-        <Footer />
-      </div>
+
     </div>
   )
 }
