@@ -8,6 +8,8 @@ import LoginPage from "pages/LoginPage"
 import LobbyPage from "pages/LobbyPage"
 import { useEffect } from "react"
 import { useLocalstorage } from "hooks/useLocalstorage"
+import ResultLayout from "layout/ResultLayout"
+import ResultPage from "pages/ResultPage"
 
 function App() {
   const { load } = useLocalstorage()
@@ -29,6 +31,9 @@ function App() {
         </Route>
         <Route path="/game" element={<GameLayout />}>
           <Route path="" element={<GamePage />} />
+        </Route>
+        <Route path="/result" element={<ResultLayout />}>
+          <Route path="" element={<ResultPage />} />
         </Route>
       </Routes>
     </Router>
